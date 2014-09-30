@@ -10,18 +10,60 @@ import UIKit
 
 class DetailTweetController: UIViewController {
 
+    
+    
+    var tweet:Tweet = Tweet(dictionary: [:])
+
+    @IBOutlet weak var retweets: UILabel!
+    @IBOutlet weak var tweetDate: UILabel!
+    @IBOutlet weak var tweetHandle: UILabel!
+    @IBOutlet weak var tweetName: UILabel!
+    var delegate:UpdateTweetsProtocol?
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        profileView.setImageWithURL(NSURL(string:tweet.user!.profileImageUrl!))
+        tweetName.text = tweet.user!.name!
+        tweetHandle.text = "@\(tweet.user!.screenname!)"
+        tweetText.text = tweet.text
+        tweetDate.text = tweet.createdAtString
+        retweets.text = "\(tweet.retweetCount!.stringValue) Retweets"
+        favorites.text = "\(tweet.favoriteCount!.stringValue) Favorites"
+        if (tweet.favorited!) {
+            favoriteButton.highlighted = true
+        }
+        if (tweet.retweeted!) {
+            retweetButton.highlighted = true
+        }
 
         // Do any additional setup after loading the view.
     }
 
+    @IBOutlet weak var tweetText: UILabel!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    @IBOutlet weak var favorites: UILabel!
+    @IBAction func goBack(sender: AnyObject) {
+        
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+    }
+ 
+    @IBAction func replyTweet(sender: AnyObject) {
+        performSegueWithIdentifier("replyFromTweet", sender: self)
+        
+        
+    }
 
+    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var favoriteButton: UIButton!
+    @IBOutlet weak var profileView: UIImageView!
     /*
     // MARK: - Navigation
 
@@ -31,5 +73,39 @@ class DetailTweetController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func makeFavorite(sender: AnyObject) {
+        if (!tweet.favorited!) {
+            self.delegate!.makeFavoriteTweet(tweet)
+          
+        }
+        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+            self.favoriteButton.highlighted = true
+        }
+        
+        
+    }
+    
+    @IBAction func retweet(sender: AnyObject) {
+        
+        if (!tweet.retweeted!) {
+            self.delegate!.retweet(tweet)
+         
+        }
+        NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+            self.retweetButton.highlighted = true
+        }
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "replyFromTweet") {
+            let navigationController = segue.destinationViewController as UINavigationController
+            let replyController = navigationController.viewControllers[0] as ReplyController
+            replyController.tweet = tweet
+            replyController.delegate = self.delegate
+        }
+    }
+
 
 }

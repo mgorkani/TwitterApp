@@ -7,3 +7,11 @@
 //
 
 import Foundation
+protocol UpdateTweetsProtocol
+{
+    func makeFavoriteTweet(tweet:Tweet)
+    func retweet(tweet:Tweet)
+    func replyTweet(tweet:Tweet, status:String)
+    func postTweet(status:String)
+}
+

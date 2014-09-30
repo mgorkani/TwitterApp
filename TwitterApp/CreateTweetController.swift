@@ -9,13 +9,43 @@
 import UIKit
 
 class CreateTweetController: UIViewController {
+    
+    @IBOutlet weak var tweet: UITextView!
+    var delegate:UpdateTweetsProtocol?
 
+    @IBOutlet weak var twitterHandle: UILabel!
+    @IBOutlet weak var username: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        tweet.becomeFirstResponder()
+        let user = User.currentUser
+        
+        
+        profileView.setImageWithURL(NSURL(string:user!.profileImageUrl!))
+        
+        username.text = user!.name!
+        twitterHandle.text = "@\(user!.screenname!)"
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func createTweet(sender: AnyObject) {
+        
+        if (!tweet.text.isEmpty) {
+            self.delegate?.postTweet(tweet.text)
+        }
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+        
+        
+    }
+    @IBOutlet weak var profileView: UIImageView!
+    @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: { () -> Void in
+            
+        })
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

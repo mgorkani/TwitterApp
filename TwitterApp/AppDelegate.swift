@@ -12,11 +12,36 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var storyboard = UIStoryboard(name:"Main",bundle: nil)
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: userDidLogoutNotification, object: nil)
+        
+        // Override point for customization after application launch.
+        UINavigationBar.appearance().backgroundColor = UIColor(red: 0.25, green: 0.6, blue: 1.0, alpha: 1.0)
+        
+        UINavigationBar.appearance().barTintColor = UIColor(red: 0.25, green: 0.6, blue: 1.0, alpha: 1.0)
+
+            
+            UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        UINavigationBar.appearance().titleTextAttributes = titleDict
+        
+        if (User.currentUser != nil) {
+           println("current user detected")
+           var vc =  storyboard.instantiateViewControllerWithIdentifier("TweetNavigationController") as UIViewController
+            window?.rootViewController = vc
+            
+            
+        }
         return true
+    }
+    
+    func userDidLogout() {
+        var vc = storyboard.instantiateInitialViewController() as ViewController
+        window?.rootViewController = vc
     }
 
     func applicationWillResignActive(application: UIApplication) {
@@ -39,6 +64,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+    func application(application: UIApplication, openURL url: NSURL, sourceApplication: String, annotation: AnyObject?) -> Bool {
+        
+        TwitterClient.sharedInstance.openURL(url)
+        
+               
+        return true
+        
     }
 
 
