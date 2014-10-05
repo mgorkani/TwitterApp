@@ -26,8 +26,15 @@ class TwitterCell: UITableViewCell {
         }
         
     }
+    @IBOutlet weak var retweetedImageHeight: NSLayoutConstraint!
+    @IBOutlet weak var retweetedImageVerticalHeight: NSLayoutConstraint!
   
+    @IBOutlet weak var retweetedTextVerticalHeight: NSLayoutConstraint!
+    @IBOutlet weak var timeStampVerticalConstriant: NSLayoutConstraint!
+    @IBOutlet weak var screenNameVerticalConstraint: NSLayoutConstraint!
+    @IBOutlet weak var usernameVerticalConstraint: NSLayoutConstraint!
         
+    @IBOutlet weak var profileViewVerticalContraint: NSLayoutConstraint!
     
     @IBAction func retweet(sender: AnyObject) {
        
@@ -52,6 +59,35 @@ class TwitterCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func withoutRetweetConstraint() {
+        
+        retweetedImageHeight.constant = 0.0
+        retweetedImageVerticalHeight.constant = 0.0
+        retweetedTextVerticalHeight.constant = 0.0
+        timeStampVerticalConstriant.constant = 15.0
+        profileViewVerticalContraint.constant = 15.0
+        usernameVerticalConstraint.constant = 15.0
+        screenNameVerticalConstraint.constant = 15.0
+        retweeterLabel.hidden = true
+        retweetImage.hidden = true
+    }
+    
+    func withRetweetConstraint() {
+    
+        retweetedImageHeight.constant = 16.0
+        retweetedImageVerticalHeight.constant = 9.0
+        retweetedTextVerticalHeight.constant = 9.0
+        timeStampVerticalConstriant.constant = 30.0
+        profileViewVerticalContraint.constant = 30.0
+        usernameVerticalConstraint.constant = 30.0
+        screenNameVerticalConstraint.constant = 30.0
+        retweeterLabel.hidden = false
+        retweetImage.hidden = false
+  
+    
+    }
+    
+    
     @IBOutlet weak var timeAgo: UILabel!
     func setTweet(tweet:Tweet) {
         self.tweet = tweet
@@ -68,12 +104,12 @@ class TwitterCell: UITableViewCell {
             retweetButton.highlighted = true
         }
         if (tweet.retweetCount! == 0 || tweet.retweeter == nil) {
-            retweeterLabel.text = ""
-            retweetImage.hidden = true
+            withoutRetweetConstraint()
         }
         else {
+           
+            withRetweetConstraint()
             retweeterLabel.text = "\(tweet.retweeter!.name!) retweeted"
-            retweetImage.hidden = false
         }
         
     }

@@ -80,16 +80,21 @@
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="253" verticalHuggingPriority="251" horizontalCompressionResistancePriority="748" verticalCompressionResistancePriority="751" text="Monika Gorkani" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0OM-02-ztr">
-                                                    <rect key="frame" x="71" y="32" width="100" height="15"/>
+                                                    <rect key="frame" x="71" y="30" width="90" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="v7F-Mj-9gB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="v7F-Mj-9gB"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="752" text="@mgorkani" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wag-py-eAj">
-                                                    <rect key="frame" x="176" y="32" width="363" height="15"/>
+                                                    <rect key="frame" x="166" y="30" width="373" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="100" id="yqk-5g-vAe"/>
                                                     </constraints>
@@ -103,7 +108,7 @@
                                                     </variation>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4h" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlv-NI-Ueq">
-                                                    <rect key="frame" x="554" y="32" width="25" height="15"/>
+                                                    <rect key="frame" x="554" y="30" width="25" height="15"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="25" id="2xX-NH-icx"/>
                                                     </constraints>
@@ -112,7 +117,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Tired of being paged at 2AM? Try PagerDuty &amp; stop outages before they wake you up. Free shirt. http://pduty.me/1vcPvIs  " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rvx-ct-ccP">
-                                                    <rect key="frame" x="71" y="52" width="506" height="43"/>
+                                                    <rect key="frame" x="71" y="50" width="506" height="45"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="230" id="VRa-bB-Lf2"/>
                                                     </constraints>
@@ -169,13 +174,18 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="monika retweeted" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ex6-OA-SdF">
-                                                    <rect key="frame" x="38" y="9" width="160" height="17"/>
+                                                    <rect key="frame" x="38" y="9" width="92" height="14"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="160" id="CtN-V2-hxm"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="CtN-V2-hxm"/>
+                                                        </mask>
+                                                    </variation>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retweet_default.png" translatesAutoresizingMaskIntoConstraints="NO" id="lVV-sR-amd">
                                                     <rect key="frame" x="19" y="9" width="16" height="16"/>
@@ -191,11 +201,11 @@
                                                 <constraint firstItem="ifb-bC-arX" firstAttribute="top" secondItem="Rvx-ct-ccP" secondAttribute="bottom" constant="8" id="0lj-Je-AAJ"/>
                                                 <constraint firstItem="wlv-NI-Ueq" firstAttribute="leading" secondItem="Wag-py-eAj" secondAttribute="trailing" constant="3" id="3S3-0b-SGa"/>
                                                 <constraint firstItem="vze-8E-JmR" firstAttribute="leading" secondItem="SdL-Ii-xQW" secondAttribute="leading" constant="8" id="5rX-lx-NFo"/>
-                                                <constraint firstItem="Wag-py-eAj" firstAttribute="top" secondItem="SdL-Ii-xQW" secondAttribute="top" constant="32" id="8HB-PR-O2G"/>
+                                                <constraint firstItem="Wag-py-eAj" firstAttribute="top" secondItem="SdL-Ii-xQW" secondAttribute="top" constant="30" id="8HB-PR-O2G"/>
                                                 <constraint firstItem="Wag-py-eAj" firstAttribute="leading" secondItem="0OM-02-ztr" secondAttribute="trailing" constant="5" id="97h-Z8-loL"/>
                                                 <constraint firstAttribute="bottom" secondItem="8bw-iR-KDI" secondAttribute="bottom" constant="5" id="D6I-UJ-dhd"/>
                                                 <constraint firstItem="8bw-iR-KDI" firstAttribute="leading" secondItem="SdL-Ii-xQW" secondAttribute="leading" constant="71" id="F7Y-jj-Xnq"/>
-                                                <constraint firstItem="wlv-NI-Ueq" firstAttribute="top" secondItem="SdL-Ii-xQW" secondAttribute="top" constant="32" id="FbN-T1-dVK"/>
+                                                <constraint firstItem="wlv-NI-Ueq" firstAttribute="top" secondItem="SdL-Ii-xQW" secondAttribute="top" constant="30" id="FbN-T1-dVK"/>
                                                 <constraint firstAttribute="trailing" secondItem="wlv-NI-Ueq" secondAttribute="trailing" constant="10" id="GJz-th-bs2"/>
                                                 <constraint firstAttribute="bottom" secondItem="mdV-ON-sq7" secondAttribute="bottom" constant="5" id="IX1-hb-wj9"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="wlv-NI-Ueq" secondAttribute="trailing" constant="5" id="JQr-j9-dIn"/>
@@ -212,9 +222,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="Rvx-ct-ccP" secondAttribute="trailing" constant="15" id="Ym8-9X-mX0"/>
                                                 <constraint firstItem="8bw-iR-KDI" firstAttribute="top" secondItem="Rvx-ct-ccP" secondAttribute="bottom" constant="8" id="b3T-qf-cAT"/>
                                                 <constraint firstItem="ifb-bC-arX" firstAttribute="top" secondItem="Rvx-ct-ccP" secondAttribute="bottom" constant="8" id="bef-mE-LEi"/>
+                                                <constraint firstItem="Wag-py-eAj" firstAttribute="leading" secondItem="0OM-02-ztr" secondAttribute="trailing" constant="5" id="cfT-8F-AYS"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ifb-bC-arX" secondAttribute="bottom" constant="5" id="f53-QU-E0O"/>
                                                 <constraint firstItem="Rvx-ct-ccP" firstAttribute="top" secondItem="0OM-02-ztr" secondAttribute="bottom" constant="5" id="fz4-BQ-pkE"/>
-                                                <constraint firstItem="0OM-02-ztr" firstAttribute="top" secondItem="SdL-Ii-xQW" secondAttribute="top" constant="32" id="gg0-mD-UST"/>
+                                                <constraint firstItem="0OM-02-ztr" firstAttribute="top" secondItem="SdL-Ii-xQW" secondAttribute="top" constant="30" id="gg0-mD-UST"/>
                                                 <constraint firstItem="lVV-sR-amd" firstAttribute="top" secondItem="SdL-Ii-xQW" secondAttribute="top" constant="9" id="lbB-4E-axU"/>
                                                 <constraint firstItem="mdV-ON-sq7" firstAttribute="top" secondItem="Rvx-ct-ccP" secondAttribute="bottom" constant="8" id="v3b-iU-Bft"/>
                                                 <constraint firstItem="lVV-sR-amd" firstAttribute="leading" secondItem="SdL-Ii-xQW" secondAttribute="leading" constant="19" id="yk6-CE-Xrl"/>
@@ -223,6 +234,7 @@
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="QwG-EW-eqb"/>
+                                                    <exclude reference="W4a-1D-BoR"/>
                                                     <exclude reference="UXr-EF-CQR"/>
                                                     <exclude reference="v3b-iU-Bft"/>
                                                     <exclude reference="0lj-Je-AAJ"/>
@@ -235,14 +247,21 @@
                                         <connections>
                                             <outlet property="favoriteButton" destination="ifb-bC-arX" id="rJE-G8-laH"/>
                                             <outlet property="profileView" destination="vze-8E-JmR" id="I9T-Po-hfk"/>
+                                            <outlet property="profileViewVerticalContraint" destination="VqJ-Lg-hmi" id="1N2-CZ-H7b"/>
                                             <outlet property="replyButton" destination="8bw-iR-KDI" id="zoS-cu-Yea"/>
                                             <outlet property="retweetButton" destination="mdV-ON-sq7" id="8lw-vX-Qry"/>
                                             <outlet property="retweetImage" destination="lVV-sR-amd" id="9MS-pw-4nm"/>
+                                            <outlet property="retweetedImageHeight" destination="0uY-8k-dTn" id="Zke-UC-dip"/>
+                                            <outlet property="retweetedImageVerticalHeight" destination="lbB-4E-axU" id="UNs-J7-w8b"/>
+                                            <outlet property="retweetedTextVerticalHeight" destination="PJ5-Fj-smO" id="ahe-bF-TZo"/>
                                             <outlet property="retweeterLabel" destination="Ex6-OA-SdF" id="rRl-cr-q37"/>
+                                            <outlet property="screenNameVerticalConstraint" destination="8HB-PR-O2G" id="J8x-Ui-Fhe"/>
                                             <outlet property="timeAgo" destination="wlv-NI-Ueq" id="iZz-v4-YXt"/>
+                                            <outlet property="timeStampVerticalConstriant" destination="FbN-T1-dVK" id="yQb-A1-17e"/>
                                             <outlet property="tweetText" destination="Rvx-ct-ccP" id="zqz-1i-ZcG"/>
                                             <outlet property="twitterHandle" destination="Wag-py-eAj" id="3i7-Ds-QL8"/>
                                             <outlet property="twitterName" destination="0OM-02-ztr" id="l2X-6f-uNk"/>
+                                            <outlet property="usernameVerticalConstraint" destination="gg0-mD-UST" id="DMO-9K-dBV"/>
                                             <segue destination="iLs-2F-QwP" kind="showDetail" identifier="showDetail" id="Hac-wS-Det"/>
                                         </connections>
                                     </tableViewCell>
